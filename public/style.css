@@ -1,0 +1,58 @@
+@font-face {
+  font-family: Montserrat;
+  src: url('Montserrat.woff2');
+}
+
+body {
+  background-color: #6DE1A7;
+  font-family: Montserrat, sans-serif;
+  color: #002e63;
+  margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+}
+
+a, a:visited {
+  color: #002e63;
+}
+
+header {
+  display: inline;
+  text-align: center;
+  font-size: 350%;
+  border: 5px solid;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.person {
+  clear: both;
+  margin-bottom: 200px;
+  margin-top: 100px;
+}
+
+.person .name {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.person > img {
+  border-radius: 10px;
+  box-shadow: 0 0 8px #002e63;
+  float: left;
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 300px;
+}
+
+.person:nth-child(odd) > img {
+  float: right;
+}
+
+.person:nth-child(odd) {
+  text-align: right;
+}
