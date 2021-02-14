@@ -5,7 +5,7 @@
   "main": "public/index.html",
   "scripts": {
     "deploy": "firebase deploy",
-    "server": "firebase emulators:start"
+    "serve": "firebase emulators:start"
   },
   "keywords": [],
   "author": "",

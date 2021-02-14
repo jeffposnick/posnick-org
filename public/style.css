@@ -9,7 +9,7 @@ body {
   background-color: #6DE1A7;
   color: #002e63;
   font-family: Montserrat, sans-serif;
-  margin: 5%;
+  margin: 50px 5% 50px 5%;
 }
 
 a, a:visited {
@@ -24,6 +24,11 @@ header {
   padding: 25px;
 	margin-bottom: 50px;
 	font-weight: bold;
+}
+
+footer {
+	align-self: center;
+	margin-top: 50px;
 }
 
 .person {
