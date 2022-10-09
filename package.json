@@ -11,6 +11,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "firebase-tools": "^9.3.0"
+    "firebase-tools": "^11.14.1"
+  },
+  "volta": {
+    "node": "16.17.1"
   }
 }
