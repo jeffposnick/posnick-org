@@ -10,10 +10,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "firebase-tools": "^11.14.1"
+  "engines": {
+    "node": ">=20"
   },
-  "volta": {
-    "node": "16.17.1"
+  "devDependencies": {
+    "firebase-tools": "^15.34.0"
   }
 }
