@@ -1,3 +1,7 @@
+/* Declare the cascade order up front: resets are lowest priority so base
+   styles (and anything added later) can override them without `!important`. */
+@layer reset, base;
+
 @font-face {
   font-family: Montserrat;
   src: url("Montserrat.woff2") format("woff2");
@@ -6,129 +10,146 @@
   font-display: swap;
 }
 
-:root {
-  --accent: #6de1a7;
-  --ink: #002e63;
+@layer reset {
+  /* Scope the box-sizing reset to the page's boxes instead of using a `*`
+     reset, which lower-priority cascade layers and web components can't
+     override. Extend this list if new box-forming elements are added. */
+  body,
+  header,
+  main,
+  article,
+  .description,
+  .links,
+  img,
+  footer {
+    box-sizing: border-box;
+  }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+@layer base {
+  :root {
+    --accent: #6de1a7;
+    --ink: #002e63;
+  }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
-  margin: 50px 5%;
-  background-color: var(--accent);
-  color: var(--ink);
-  font-family: Montserrat, sans-serif;
-  line-height: 1.5;
-}
-
-a,
-a:visited {
-  color: var(--ink);
-}
-
-a:focus-visible {
-  border-radius: 2px;
-  outline: 3px solid var(--ink);
-  outline-offset: 2px;
-}
-
-header {
-  align-self: center;
-  margin-bottom: 50px;
-  padding: 25px;
-  border: 4px solid;
-}
-
-h1 {
-  margin: 0;
-  font-size: clamp(1.75rem, 7vw, 3rem);
-  font-weight: bold;
-  letter-spacing: 0.5rem;
-  text-align: center;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-}
-
-.person {
-  display: flex;
-  gap: clamp(1rem, 5vw, 4rem);
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-.person:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.person img {
-  flex: 0 0 auto;
-  width: clamp(140px, 30vw, 300px);
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 8px var(--ink);
-}
-
-.description {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.bio {
-  margin: 0 0 0.8rem;
-}
-
-.name {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-footer {
-  align-self: center;
-  margin-top: auto;
-  padding-top: 50px;
-  text-align: center;
-}
-
-@media (max-width: 640px) {
   body {
-    margin: 25px 5%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    /* Padding (not margin) keeps the 100dvh minimum inside the viewport, so
+       the page doesn't always overflow by the amount of the margin. */
+    margin: 0;
+    padding: 50px 5%;
+    background-color: var(--accent);
+    color: var(--ink);
+    font-family: Montserrat, sans-serif;
+    line-height: 1.5;
+    /* Keep long unbroken strings (e.g. links) from overflowing their box. */
+    overflow-wrap: break-word;
+  }
+
+  a:any-link {
+    color: var(--ink);
+  }
+
+  a:focus-visible {
+    border-radius: 2px;
+    outline: 3px solid var(--ink);
+    outline-offset: 2px;
   }
 
   header {
-    margin-bottom: 25px;
-    padding: 15px;
+    align-self: center;
+    margin-bottom: 50px;
+    padding: 25px;
+    border: 4px solid;
   }
 
-  .person,
-  .person:nth-child(even) {
+  h1 {
+    margin: 0;
+    font-size: clamp(1.75rem, 7vw, 3rem);
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    text-align: center;
+  }
+
+  main {
+    display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 40px;
+  }
+
+  .person {
+    display: flex;
+    gap: clamp(1rem, 5vw, 4rem);
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .person:nth-child(even) {
+    flex-direction: row-reverse;
   }
 
   .person img {
-    width: min(240px, 70%);
+    flex: 0 0 auto;
+    width: clamp(140px, 30vw, 300px);
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 8px var(--ink);
+  }
+
+  .description {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bio {
+    margin: 0 0 0.8rem;
+    text-wrap: pretty;
+  }
+
+  .name {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  footer {
+    align-self: center;
+    margin-top: auto;
+    padding-top: 50px;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    body {
+      padding: 25px 5%;
+    }
+
+    header {
+      margin-bottom: 25px;
+      padding: 15px;
+    }
+
+    .person,
+    .person:nth-child(even) {
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 40px;
+    }
+
+    .person img {
+      width: min(240px, 70%);
+    }
   }
 }
