@@ -1,9 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Posnicks</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="The homepage for Jeff, Sheryl, and Zach Posnick."
+    />
+    <meta name="theme-color" content="#6de1a7" />
+    <link rel="canonical" href="https://posnick.org/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Posnicks" />
+    <meta property="og:title" content="The Posnicks" />
+    <meta
+      property="og:description"
+      content="The homepage for Jeff, Sheryl, and Zach Posnick."
+    />
+    <meta property="og:url" content="https://posnick.org/" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link
       rel="preload"
       href="/Montserrat.woff2"
@@ -16,54 +35,91 @@
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👪</text></svg>"
     />
-    <meta
-      name="Description"
-      content="The homepage for Jeff, Sheryl, and Zach Posnick."
-    />
   </head>
   <body>
-    <header>The Posnicks</header>
-    <div class="person">
-      <img src="jeff.webp" />
-      <div class="description">
-        <div>
-          <span class="name">Jeff Posnick</span> works on
-          <a href="https://bloomberg.github.io/js-blog/">JavaScript stuff at Bloomberg Engineering</a>.
+    <header>
+      <h1>The Posnicks</h1>
+    </header>
+    <main>
+      <article class="person">
+        <img
+          src="jeff.webp"
+          alt="Jeff Posnick"
+          width="1000"
+          height="1000"
+          decoding="async"
+          fetchpriority="high"
+        />
+        <div class="description">
+          <p class="bio">
+            <span class="name">Jeff Posnick</span> works on
+            <a href="https://bloomberg.github.io/js-blog/"
+              >JavaScript stuff at Bloomberg Engineering</a
+            >.
+          </p>
+          <ul class="links">
+            <li><a href="https://jeffy.info/">Blog</a></li>
+            <li>
+              <a href="https://bsky.app/profile/jeff.posnick.org">Bluesky</a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/jeffposnick">Facebook</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/jeffposnick/">LinkedIn</a>
+            </li>
+            <li><a href="https://github.com/jeffposnick">GitHub</a></li>
+            <li>
+              <a href="https://stackoverflow.com/users/385997/jeff-posnick"
+                >Stack Overflow</a
+              >
+            </li>
+          </ul>
         </div>
-        <div><a href="https://jeffy.info/">Blog</a></div>
-        <div><a href="https://bsky.app/profile/jeff.posnick.org">Bluesky</a></div>
-        <div><a href="https://www.facebook.com/jeffposnick">Facebook</a></div>
-        <div>
-          <a href="https://www.linkedin.com/in/jeffposnick/">LinkedIn</a>
+      </article>
+      <article class="person">
+        <img
+          src="sheryl.webp"
+          alt="Sheryl Posnick"
+          width="1000"
+          height="1000"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="description">
+          <p class="bio">
+            <span class="name">Sheryl Posnick</span> is a Senior Project Manager
+            at <a href="https://acue.org/acue_team/sheryl-posnick/">ACUE</a>.
+          </p>
+          <ul class="links">
+            <li>
+              <a href="https://www.facebook.com/sherylposnick">Facebook</a>
+            </li>
+            <li>
+              <a href="https://bsky.app/profile/sheryl.posnick.org">Bluesky</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/sheryl-posnick-313a9a17/"
+                >LinkedIn</a
+              >
+            </li>
+          </ul>
         </div>
-        <div><a href="https://github.com/jeffposnick">GitHub</a></div>
-        <div>
-          <a href="http://stackoverflow.com/users/385997/jeff-posnick"
-            >Stack Overflow</a
-          >
+      </article>
+      <article class="person">
+        <img
+          src="zach.webp"
+          alt="Zach Posnick"
+          width="1000"
+          height="1000"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="description">
+          <p class="bio"><span class="name">Zach Posnick</span> is a gamer.</p>
         </div>
-      </div>
-    </div>
-    <div class="person">
-      <img src="sheryl.webp" />
-      <div class="description">
-        <div>
-          <span class="name">Sheryl Posnick</span> is a Senior Project Manager
-          at <a href="https://acue.org/acue_team/sheryl-posnick/">ACUE</a>.
-        </div>
-        <div><a href="https://www.facebook.com/sherylposnick">Facebook</a></div>
-        <div><a href="https://bsky.app/profile/sheryl.posnick.org">Bluesky</a></div>
-        <div>
-          <a href="https://www.linkedin.com/in/sheryl-posnick-313a9a17/">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-    <div class="person">
-      <img src="zach.webp" />
-      <div class="description">
-        <div><span class="name">Zach Posnick</span> is a gamer.</div>
-      </div>
-    </div>
+      </article>
+    </main>
     <footer>Made with 💖 in Brooklyn, NY.</footer>
     <script
       async
