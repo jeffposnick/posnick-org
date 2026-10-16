@@ -2,18 +2,21 @@
   "name": "posnick-org",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "main": "public/index.html",
   "scripts": {
     "deploy": "firebase deploy",
-    "serve": "firebase emulators:start"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "engines": {
-    "node": ">=20"
+    "serve": "firebase emulators:start",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check"
   },
   "devDependencies": {
-    "firebase-tools": "^15.34.0"
+    "firebase-tools": "^15.34.0",
+    "oxfmt": "^0.73.0"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
